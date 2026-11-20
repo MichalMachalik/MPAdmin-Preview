@@ -1,44 +1,34 @@
 # MPAdmin Preview
 
-Interaktivní ukázka webu MPAdmin a aplikace Vyúčtování a pokladna.
+[Web MPAdmin](https://michalmachalik.github.io/MPAdmin-Preview/) · [Vyúčtování a pokladna pro Windows](https://michalmachalik.github.io/MPAdmin-Preview/#windows)
 
-[Web MPAdmin](https://michalmachalik.github.io/MPAdmin-Preview/) · [Windows aplikace](https://michalmachalik.github.io/MPAdmin-Preview/#windows)
+Dvě propojená rozhraní pro denní vyúčtování provozovny. Web slouží ke správě a kontrole záznamů, pokladní aplikace k jejich pořízení i během výpadku připojení. Repozitář obsahuje zdrojový kód prohlížečového náhledu. Provozovny, účty, stroje i částky jsou fiktivní.
 
-Na webu otevřete provozovnu a klikněte na **Přidej denní vyúčtování**. Změňte žluté pole **Konec** a sledujte součet podle typu zařízení. Datum ve výpisu otevírá podrobný přehled; tlačítkem **Upravit** otevřete formulář.
+## Průchod jedním vyúčtováním
 
-Ukázka obsahuje:
+1. Otevřete náhled Windows, klikněte na **Spustit** a v dolní liště zvolte **Pracovat offline**.
+2. Přidejte denní vyúčtování, změňte žluté pole **Konec** a uložte záznam do pokladní knihy.
+3. Obnovte připojení a zvolte **Odeslat data na Server**. Na webu otevřete stejnou provozovnu a datum. Částky můžete porovnat s pokladními zápisy.
 
-- evidenci automatů, samostatné pořadí a číslo, detail zařízení, jednotlivá vyúčtování, hromadný import a vložení tabulky z Excelu;
-- denní a měsíční vyúčtování, vícedenní příjmy a výdaje a přehledy jednotlivých automatů;
-- pokladní, manažerskou a bezhotovostní manažerskou knihu, účetní knihy uživatelů a přiřazování provozoven;
-- správu uživatelů, jejich skupin, platnosti přiřazení k provozovnám, hesel a pokladníků;
-- správu provozoven, číselníků, položek příjmů a výdajů a instancí aplikace;
-- výčetku bankovek a mincí s vložením částky do vyúčtování, trezory, kalkulačku a historii provozní hotovosti;
-- ukázkové SMS a e-maily se skupinami příjemců a místní historií zpráv;
-- exporty do XLS a PDF s českými znaky, doplňkové CSV exporty a tisk přes prohlížeč;
-- původní členění filtrů, samostatné směry řazení, stránkování a kalendáře s českými názvy;
-- více současně rozpracovaných vyúčtování, nabídku oken, minimalizaci, přesouvání, změnu velikosti formulářů a nabídku uložení při zavření aplikace.
+Přenos se simuluje ve stejném prohlížeči. Přepnutí mezi webem a Windows zachová rozpracované okno. Při zavření změněného formuláře nabízí aplikace uložení. Klávesa Escape v potvrzovacím dialogu vrátí uživatele k rozepsané práci.
 
-Ve Windows ukázce klikněte ve spouštěči na **Spustit**, v dolní liště zvolte **Pracovat offline** a uložte vyúčtování. Poté obnovte připojení a zvolte **Odeslat data na Server**. Záznam se objeví také na webu.
+## Co lze ověřit
 
-Při přepnutí z Windows ukázky na web zůstane rozpracované vyúčtování otevřené v ukázkové relaci. Po návratu do Windows ukázky se znovu zobrazí se zadanými hodnotami.
+| Oblast | Chování |
+| --- | --- |
+| Vyúčtování a pokladna | Denní a měsíční přehledy, vícedenní příjmy a výdaje, výčetka hotovosti, trezory a historie zůstatků. Oprava čekajícího vyúčtování aktualizuje související zápisy. |
+| Evidence a správa | Detail automatu, vlastní pořadí, hromadný import, vložení tabulky z Excelu, skupiny uživatelů, přiřazení provozoven a číselníky. |
+| Souběžná práce | Více otevřených formulářů, minimalizace a návrat do okna. Pokud jiná karta mezitím změní záznam, aplikace zachová rozepsané hodnoty a upozorní na konflikt. |
+| Výstupy | Exporty XLS, PDF a CSV, tisk přes prohlížeč a místní historie ukázkových SMS a e-mailů. |
 
-Při zavření upraveného vyúčtování nebo záznamu pokladní knihy nabídne Windows ukázka uložení. Klávesa Escape v potvrzovacím dialogu vrátí uživatele do rozpracovaného formuláře.
+## Spuštění ze zdrojů
 
-Obě rozhraní běží v prohlížeči. Připojení, přenos záznamů a aktualizace spouštěče se simulují lokálně. SMS a e-maily se ukládají jen do místní historie a nikomu se neodesílají. Výchozí provozovny, účty, stroje i částky jsou smyšlené. Tlačítko **Obnovit demo** vrátí výchozí data v prohlížeči.
-
-Vzhled vychází z webu MPAdmin a klienta Vyúčtování a pokladna 2.0.4. Ukázka reprodukuje jejich obrazovky a pracovní postupy v HTML, CSS a JavaScriptu. Přihlášení a oprávnění jsou součástí místní demonstrace; úložiště patří konkrétnímu prohlížeči. Instalaci Windows, tiskový dialog a přenos na skutečný server nahrazuje prostředí prohlížeče. Přihlášený je výchozí smyšlený správce; po odhlášení jsou přístupové údaje uvedené na přihlašovací obrazovce.
-
-Výchozí soubor obsahuje provozovny se 6 a 500 automaty. Úpravy se uchovávají po obnovení stránky. Změny v otevřené starší kartě vyvolají kontrolu konfliktu; rozpracovaný formulář zůstane dostupný. Hromadný import a odeslání čekajících záznamů se zapisují jako jeden celek.
-
-Uložení vyúčtování vytvoří odpovídající pokladní záznamy pro typy automatů a jednotlivé denní příjmy a výdaje. Změna dosud neodeslaného vyúčtování nahradí související zápisy včetně odstranění již nepoužitých položek. Aplikace uzamyká potvrzená vyúčtování a umožňuje upravit poslední čekající záznam. Zůstatky respektují pořadí zápisů včetně zpětně datovaných položek; trezory sčítají vklady a výběry.
-
-## Místní spuštění
+Pro statický web stačí Python 3. Z kořene repozitáře spusťte server a otevřete [web](http://127.0.0.1:8000/) nebo [pokladní aplikaci](http://127.0.0.1:8000/#windows).
 
 ```sh
 python -m http.server 8000 --bind 127.0.0.1 --directory docs
 ```
 
-Web otevřete na `http://127.0.0.1:8000/` a aplikaci na `http://127.0.0.1:8000/#windows`. Kontroly výpočtů, úprav záznamů a místního odesílání spustíte pomocí `npm test`.
+V druhém terminálu spusťte `npm test`. Testy v [tests/](tests/) ověřují výpočty, zápisy a místní odesílání. Veškeré soubory potřebné pro běh náhledu jsou v [docs/](docs/). Tlačítko **Obnovit demo** obnoví v prohlížeči výchozí data, včetně provozoven se 6 a 500 automaty.
 
-XLS export používá přibalený SheetJS 0.20.3. PDF export používá pdf-lib 1.17.1, @pdf-lib/fontkit 1.1.1 a písmo DejaVu Sans. Licenční texty jsou přiložené v `docs/vendor/`. Aplikace načítá své soubory ze stejného webu a neodesílá zadané údaje na server.
+Webové rozhraní i pokladní klient verze 2.0.4 jsou zde zpracované v HTML, CSS a JavaScriptu. Data zůstávají v prohlížeči. Exporty používají přibalené knihovny SheetJS, pdf-lib a fontkit a písmo DejaVu Sans. [Licence použitých knihoven a písma](docs/vendor/)
